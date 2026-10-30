@@ -25,6 +25,11 @@
         "erasableSyntaxOnly": true,
         "noFallthroughCasesInSwitch": true,
         // MyOptions
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+        },
         "rootDirs": [
             ".",
             "./.react-router/types"

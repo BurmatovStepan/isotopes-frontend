@@ -1,4 +1,4 @@
-import type { IsotopeView } from "../../entities/Isotope/types"
+import type { IsotopeView } from "@/entities/Isotope/types"
 
 export type FeedPageProps = {
     isotopes: IsotopeView[];

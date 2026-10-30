@@ -1,4 +1,4 @@
-import { fetchPublished } from "../../entities/Isotope/api/requests";
+import { fetchPublished } from "@/entities/Isotope/api/requests";
 import type { Route } from "./+types/Feed.route";
 import FeedPage from "./Feed";
 

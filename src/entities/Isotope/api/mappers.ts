@@ -1,4 +1,4 @@
-import { resolveMediaUrl } from "../../../shared/utils/resolveMediaUrl"
+import { resolveMediaUrl } from "@/shared/utils/resolveMediaUrl"
 import type { IsotopeView } from "../types"
 import type { IsotopeDTO } from "./types"
 
