@@ -15,6 +15,7 @@ export default function LikeToggle({
     ]
         .filter(Boolean)
         .join(' ');
+
     return (
         <div className={classes}>
             <button

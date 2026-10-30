@@ -1,6 +1,6 @@
 import { FallbackImage } from "@/shared/ui/FallbackImage/FallbackImage";
 import type { IsotopeCardProps } from "./types";
-import LikeToggle from "@/features/LikeToggle/LikeToggle";
+import LikeToggle from "@/shared/ui/LikeToggle/LikeToggle";
 import { useState } from "react";
 
 export default function IsotopeCard({
@@ -22,7 +22,7 @@ export default function IsotopeCard({
         const nextLiked = !liked;
 
         setLiked(nextLiked);
-        setCount(current => current + (nextLiked ? 1 : -1));
+        setCount(count + (nextLiked ? 1 : -1));
     }
 
     return (
@@ -55,7 +55,7 @@ export default function IsotopeCard({
                 <a href={homeRedirectUrl} className="isotope-card__link isotope-card__link--name">
                     <h3 className="isotope-card__name">{name}</h3>
                 </a>
-                <p className="isotope-card__half-life">T&half;: {halfLifeFormatted}</p>
+                <p className="isotope-card__half-life">T½: {halfLifeFormatted}</p>
             </div>
         </div>
     );
