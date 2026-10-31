@@ -3,11 +3,19 @@ import { ISOTOPE_DTOS } from "@/mock/data";
 import { mapIsotopeDTO } from "./mappers";
 
 export async function fetchPublished(
+    maxHalfLife?: bigint,
 ): Promise<IsotopeView[]> {
     return Object.values(ISOTOPE_DTOS)
-        .filter(dto => dto.status === IsotopeStatus.Published)
+        .filter(({ status }) => status === IsotopeStatus.Published)
+        .filter(({ halfLife }) => {
+            if (maxHalfLife === undefined) return true;
+            if (halfLife === null) return false;
+
+            return BigInt(halfLife) <= maxHalfLife;
+        })
         .map(mapIsotopeDTO);
 }
+
 
 export async function fetchPublishedById(
     id: number,

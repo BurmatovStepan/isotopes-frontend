@@ -4,12 +4,16 @@ import NavBar from "@/features/NavBar/NavBar";
 import type { FeedPageProps } from "./types";
 
 export default function FeedPage({
-    isotopes
+    isotopes,
+    maxHalfLifeExponent
 }: FeedPageProps) {
     return (
         <div className="page feed-page">
             <section className="feed">
-                <Search></Search>
+                <Search
+                    className="feed__search"
+                    maxHalfLifeExponent={maxHalfLifeExponent}
+                />
                 <ul className="feed__list">
                     {isotopes.map(isotope => (
                         <li className="feed__item" key={isotope.id}>

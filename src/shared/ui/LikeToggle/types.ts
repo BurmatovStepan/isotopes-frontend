@@ -2,6 +2,6 @@ export type LikeToggleProps = {
     isLiked: boolean;
     likeCount: number;
     isHorizontal: boolean;
-    className?: string | undefined;
+    className?: string;
     onToggle: () => Promise<void> | void;
 }
