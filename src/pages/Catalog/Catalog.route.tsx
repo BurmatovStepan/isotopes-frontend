@@ -1,6 +1,12 @@
 import { fetchPublished } from "@/entities/Isotope/api/requests";
-import type { Route } from "./+types/Feed.route";
-import FeedPage from "./Feed";
+import type { Route } from "./+types/Catalog.route";
+import CatalogPage from "./Catalog";
+
+export const handle = {
+    pageClass: "page--catalog",
+    navClass: "navigation__catalog",
+};
+
 
 export async function loader({ request }: Route.LoaderArgs) {
     const url = new URL(request.url);
@@ -30,10 +36,10 @@ export async function loader({ request }: Route.LoaderArgs) {
     };
 }
 
-export default function FeedRoute({
+export default function CatalogRoute({
     loaderData,
 }: Route.ComponentProps) {
-    return <FeedPage
+    return <CatalogPage
         isotopes={loaderData.isotopes}
         maxHalfLifeExponent={loaderData.maxHalfLifeExponent}
     />

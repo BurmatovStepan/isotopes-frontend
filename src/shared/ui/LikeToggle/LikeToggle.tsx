@@ -1,3 +1,4 @@
+import { makeClassString } from '@/shared/utils/makeClassString';
 import type { LikeToggleProps } from './types';
 
 export default function LikeToggle({
@@ -7,14 +8,12 @@ export default function LikeToggle({
     className = '',
     onToggle,
 }: LikeToggleProps) {
-    const classes = [
+    const classes = makeClassString(
         'like',
         isLiked && 'like--active',
         isHorizontal && 'like--horizontal',
         className,
-    ]
-        .filter(Boolean)
-        .join(' ');
+    )
 
     return (
         <div className={classes}>

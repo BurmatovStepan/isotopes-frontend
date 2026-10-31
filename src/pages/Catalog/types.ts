@@ -1,6 +1,6 @@
 import type { IsotopeView } from "@/entities/Isotope/types"
 
-export type FeedPageProps = {
+export type CatalogPageProps = {
     isotopes: IsotopeView[];
     maxHalfLifeExponent: number;
 }
