@@ -1,5 +1,6 @@
-import Search from "@/features/Search/Search";
-import IsotopeCard from "@/entities/Isotope/ui/IsotopeCard/IsotopeCard";
+import IsotopeCard from '@/entities/Isotope/ui/IsotopeCard/IsotopeCard';
+import Search from '@/features/Search/Search';
+
 import type { CatalogPageProps } from "./types";
 
 export default function CatalogPage({

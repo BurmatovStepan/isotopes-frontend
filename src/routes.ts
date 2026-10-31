@@ -1,4 +1,6 @@
-import { type RouteConfig, index, prefix, route } from "@react-router/dev/routes";
+import { prefix, route } from '@react-router/dev/routes';
+
+import type { RouteConfig } from '@react-router/dev/routes';
 
 export default [
     ...prefix('isotopes', [

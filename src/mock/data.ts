@@ -1,5 +1,5 @@
-import { IsotopeStatus } from "@/entities/Isotope/types";
-import { type IsotopeDTO } from "@/entities/Isotope/api/types";
+import type { IsotopeDTO } from '@/entities/Isotope/api/types';
+import { IsotopeStatus } from '@/entities/Isotope/types';
 
 export const USER = [
     { id: 1 },

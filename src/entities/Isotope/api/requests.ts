@@ -1,6 +1,9 @@
-import { IsotopeStatus, type IsotopeView } from "../types";
-import { ISOTOPE_DTOS } from "@/mock/data";
-import { mapIsotopeDTO } from "./mappers";
+import { ISOTOPE_DTOS } from '@/mock/data';
+
+import { IsotopeStatus } from '../types';
+import { mapIsotopeDTO } from './mappers';
+
+import type { IsotopeView } from '../types';
 
 export async function fetchPublished(
     maxHalfLife?: bigint,

@@ -1,8 +1,9 @@
-import { FallbackImage } from "@/shared/ui/FallbackImage/FallbackImage";
-import type { IsotopeCardProps } from "./types";
-import LikeToggle from "@/shared/ui/LikeToggle/LikeToggle";
-import { useState } from "react";
+import { useState } from 'react';
 
+import { FallbackImage } from '@/shared/ui/FallbackImage/FallbackImage';
+import LikeToggle from '@/shared/ui/LikeToggle/LikeToggle';
+
+import type { IsotopeCardProps } from "./types";
 export default function IsotopeCard({
     id,
     name,

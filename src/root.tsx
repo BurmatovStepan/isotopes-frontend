@@ -1,11 +1,13 @@
-import { Outlet, Scripts, useMatches } from "react-router";
-import { makeClassString } from "./shared/utils/makeClassString";
-import { Meta, Links, ScrollRestoration } from "react-router";
 import './css/reset.css';
 import './css/typography.css';
 import './css/variables.css';
 import './css/style.css';
-import NavBar from "./features/NavBar/NavBar";
+
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useMatches } from 'react-router';
+
+import NavBar from './features/NavBar/NavBar';
+import { getVisibleNavItems } from './navigation';
+import { makeClassString } from './shared/utils/makeClassString';
 
 type ShellClasses = {
     pageClass?: string;
@@ -34,7 +36,7 @@ export default function App() {
                 <div className={makeClassString("page", shell?.pageClass)}>
                     <Outlet />
                     <NavBar
-                        isGuest={false}
+                        items={getVisibleNavItems(false)}
                         className={shell?.navClass}
                     />
 

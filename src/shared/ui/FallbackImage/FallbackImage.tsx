@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+
 import type { FallbackImageProps } from "./types";
 
 export function FallbackImage({

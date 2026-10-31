@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+
 import type { SearchProps } from "./types";
 
 const EMPTY_STATE_MESSAGE = 'T½, макс. (нс)';

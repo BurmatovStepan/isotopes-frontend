@@ -1,7 +1,8 @@
-import { fetchPublished } from "@/entities/Isotope/api/requests";
-import type { Route } from "./+types/Catalog.route";
-import CatalogPage from "./Catalog";
+import { fetchPublished } from '@/entities/Isotope/api/requests';
 
+import CatalogPage from './Catalog';
+
+import type { Route } from "./+types/Catalog.route";
 export const handle = {
     pageClass: "page--catalog",
     navClass: "navigation__catalog",

@@ -1,4 +1,5 @@
 import { makeClassString } from '@/shared/utils/makeClassString';
+
 import type { LikeToggleProps } from './types';
 
 export default function LikeToggle({
