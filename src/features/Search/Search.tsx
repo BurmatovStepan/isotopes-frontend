@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { useState } from 'react';
 
 import type { SearchProps } from "./types";

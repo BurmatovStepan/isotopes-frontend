@@ -1,0 +1,28 @@
+.navigation {
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--surface-1);
+    border: 2px solid var(--border-main);
+    border-radius: 8px;
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+
+        &.active {
+            color: var(--primary);
+        }
+    }
+
+    &__icon {
+        aspect-ratio: 1 / 1;
+        width: 32px;
+        background-color: currentColor;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+    }
+}

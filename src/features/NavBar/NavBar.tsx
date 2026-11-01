@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { NavLink } from 'react-router';
 
 import { makeClassString } from '@/shared/utils/makeClassString';

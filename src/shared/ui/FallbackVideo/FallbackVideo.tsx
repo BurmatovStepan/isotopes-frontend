@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+
 import type { FallbackVideoProps } from "./types";
 
 export function FallbackVideo({

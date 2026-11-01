@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { makeClassString } from '@/shared/utils/makeClassString';
 
 import type { LikeToggleProps } from './types';

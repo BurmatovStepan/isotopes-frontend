@@ -1,9 +1,15 @@
-import { fetchFirstPublished, fetchNextPublished, fetchPublishedById } from "@/entities/Isotope/api/requests";
-import type { Route } from "./+types/FeedById.route"
-import FeedPage from "./Feed";
-import type { IsotopeView } from "@/entities/Isotope/types";
-import { data } from "react-router";
+import { data } from 'react-router';
 
+import {
+    fetchFirstPublished,
+    fetchNextPublished,
+    fetchPublishedById
+} from '@/entities/Isotope/api/requests';
+
+import FeedPage from './Feed';
+
+import type { Route } from "./+types/FeedById.route"
+import type { IsotopeView } from "@/entities/Isotope/types";
 export const handle = {
     pageClass: "page--feed isotope-page",
 };

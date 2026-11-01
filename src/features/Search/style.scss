@@ -1,0 +1,114 @@
+.search {
+    display: grid;
+    grid-template-areas:
+        "display find"
+        "slider slider";
+    grid-template-columns: 4fr 1fr;
+    gap: 4px 8px;
+
+    &__value-display {
+        height: 32px;
+        padding-left: 8px;
+        grid-area: display;
+        align-content: center;
+        background-color: var(--surface-field);
+        border: 1px solid var(--border-main);
+        border-radius: 8px;
+        user-select: none;
+    }
+
+    &__find {
+        max-height: 32px;
+        padding: 4px 8px;
+        grid-area: find;
+        color: var(--primary);
+        background-color: var(--surface-primary);
+        border: 1px solid var(--border-primary);
+        border-radius: 8px;
+
+        box-shadow: var(--box-shadow-small);
+        transition:
+            box-shadow var(--transition-short) var(--transition-timing-function),
+            filter var(--transition-short) var(--transition-timing-function),
+            transform var(--transition-short) var(--transition-timing-function);
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+
+        &:active {
+            box-shadow: var(--box-shadow-main);
+            transform: translateY(1px);
+        }
+    }
+
+    &__slider-wrapper {
+        width: 100%;
+        grid-area: slider;
+    }
+}
+
+.slider {
+    display: grid;
+    grid-template-areas:
+        "slider slider"
+        "lower-bound upper-bound";
+
+    &__label {
+        margin-top: -4px;
+    }
+
+    &__label--lower {
+        grid-area: lower-bound;
+    }
+
+    &__label--upper {
+        grid-area: upper-bound;
+        justify-self: end;
+    }
+
+    &__input {
+        grid-area: slider;
+
+        appearance: none;
+        -webkit-appearance: none;
+
+        background-color: transparent;
+        cursor: pointer;
+
+        &::-moz-range-track {
+            height: 4px;
+            background-color: var(--surface-field);
+            border: 0;
+            border-radius: 2px;
+        }
+
+        &::-moz-range-thumb {
+            width: 42px;
+            height: 10px;
+
+            background-color: var(--surface-2);
+            border: 2px solid var(--border-main);
+            border-radius: 4px;
+            box-shadow: var(--box-shadow-small);
+
+            transition:
+                background-color var(--transition-short) var(--transition-timing-function),
+                border-color var(--transition-short) var(--transition-timing-function),
+                transform var(--transition-short) var(--transition-timing-function),
+                box-shadow var(--transition-short) var(--transition-timing-function);
+        }
+    }
+
+
+    &__input:hover::-moz-range-thumb,
+    &__input:active::-moz-range-thumb {
+        background-color: var(--surface-1);
+        border-color: var(--primary);
+    }
+
+    &__input:active::-moz-range-thumb {
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+        transform: scaleX(1.1);
+    }
+}

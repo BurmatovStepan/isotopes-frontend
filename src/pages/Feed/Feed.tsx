@@ -1,10 +1,13 @@
-import { FallbackVideo } from "@/shared/ui/FallbackVideo/FallbackVideo";
-import { Link } from "react-router";
-import LikeToggle from "@/shared/ui/LikeToggle/LikeToggle";
-import type { FeedPageProps } from "./types";
-import { useState } from "react";
-import { makeClassString } from "@/shared/utils/makeClassString";
+import './style.scss';
 
+import { useState } from 'react';
+import { Link } from 'react-router';
+
+import { FallbackVideo } from '@/shared/ui/FallbackVideo/FallbackVideo';
+import LikeToggle from '@/shared/ui/LikeToggle/LikeToggle';
+import { makeClassString } from '@/shared/utils/makeClassString';
+
+import type { FeedPageProps } from "./types";
 export default function FeedPage({
     isotope,
 }: FeedPageProps) {
@@ -46,17 +49,22 @@ export default function FeedPage({
                 <div className={makeClassString(
                     'property-display',
                     'isotope-page__radiation-type',
-                    isotope.isAlpha && 'isotope-page__radiation-type--alpha',
+                    'radiation-type',
+                    isotope.isAlpha && 'radiation-type--alpha',
                 )}>
                     <img src="/icons/alpha.svg" className="property-display__label-icon" />
-                    <div className="property-display__value">
+                    <div className="property-display__value radiation-type__value">
                         <img src={isotope.isAlpha ? '/icons/check.svg' : '/icons/cross.svg'} />
                     </div>
                 </div>
 
-                <div className="property-display isotope-page__half-life" title={isotope.halfLifeFormatted.full}>
+                <div className={makeClassString(
+                    "property-display",
+                    "isotope-page__half-life",
+                    'half-life',
+                )} title={isotope.halfLifeFormatted.full}>
                     <div className="property-display__label">T½</div>
-                    <div className="property-display__value">{isotope.halfLifeFormatted.compact}</div>
+                    <div className="property-display__value half-life__value">{isotope.halfLifeFormatted.compact}</div>
                 </div>
 
                 <Link to={`/isotopes/feed/${isotope.id}?next=true`} className="meta__next next-button">

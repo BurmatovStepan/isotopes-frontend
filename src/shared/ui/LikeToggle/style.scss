@@ -1,0 +1,30 @@
+.like {
+    display: flex;
+    padding: 4px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    &__label {
+        line-height: 0.8;
+    }
+
+    &__button {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+    }
+
+    &__icon {
+        aspect-ratio: 1 / 1;
+        width: var(--like-icon-size, 24px);
+    }
+
+    &--horizontal {
+        flex-direction: row;
+
+        .like__label {
+            line-height: 1;
+        }
+    }
+}

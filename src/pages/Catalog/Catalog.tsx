@@ -1,3 +1,5 @@
+import './style.scss';
+
 import IsotopeCard from '@/entities/Isotope/ui/IsotopeCard/IsotopeCard';
 import Search from '@/features/Search/Search';
 
