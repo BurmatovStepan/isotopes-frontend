@@ -11,7 +11,6 @@ import { makeClassString } from './shared/utils/makeClassString';
 
 type ShellClasses = {
     pageClass?: string;
-    navClass?: string;
 };
 
 export default function App() {
@@ -19,7 +18,7 @@ export default function App() {
     const shell = [...matches]
         .reverse()
         .map(match => match.handle as ShellClasses)
-        .find(handle => handle?.pageClass || handle?.navClass)
+        .find(handle => handle?.pageClass)
 
     return (
         <html lang="ru">
@@ -37,7 +36,6 @@ export default function App() {
                     <Outlet />
                     <NavBar
                         items={getVisibleNavItems(false)}
-                        className={shell?.navClass}
                     />
 
                 </div>

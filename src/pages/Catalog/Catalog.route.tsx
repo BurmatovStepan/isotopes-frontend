@@ -5,7 +5,6 @@ import CatalogPage from './Catalog';
 import type { Route } from "./+types/Catalog.route";
 export const handle = {
     pageClass: "page--catalog",
-    navClass: "navigation__catalog",
 };
 
 

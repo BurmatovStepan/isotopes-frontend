@@ -15,7 +15,10 @@ export type IsotopeView = {
     imageUrl: string | null;
     videoUrl: string | null;
     halfLife: bigint | null;
-    halfLifeFormatted: string;
+    halfLifeFormatted: {
+        compact: string;
+        full: string;
+    };
     isAlpha: boolean | null;
 
     likeCount: number;

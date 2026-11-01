@@ -5,7 +5,6 @@ export type IsotopeDTO = {
     imageUrl: string | null;
     videoUrl: string | null;
     halfLife: string | null;
-    halfLifeFormatted: string;
     isAlpha: boolean | null;
 
     likeCount: number;

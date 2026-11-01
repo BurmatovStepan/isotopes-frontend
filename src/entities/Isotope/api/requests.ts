@@ -31,3 +31,28 @@ export async function fetchPublishedById(
 
     return mapIsotopeDTO(dto);
 }
+
+export async function fetchFirstPublished(
+): Promise<IsotopeView | null> {
+    const dto = Object.values(ISOTOPE_DTOS)
+        .filter(dto => dto.status === IsotopeStatus.Published)
+        .sort((a, b) => a.id - b.id)
+        .at(0);
+
+    if (!dto) return null;
+
+    return mapIsotopeDTO(dto);
+}
+
+export async function fetchNextPublished(
+    id: number,
+): Promise<IsotopeView | null> {
+    const dto = Object.values(ISOTOPE_DTOS)
+        .filter(dto => dto.status === IsotopeStatus.Published)
+        .sort((a, b) => a.id - b.id)
+        .find(dto => dto.id > id);
+
+    if (!dto) return null;
+
+    return mapIsotopeDTO(dto);
+}

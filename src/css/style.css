@@ -52,7 +52,7 @@ body {
     background-color: var(--surface-0);
 }
 
-.isotope__video {
+.isotope-page__video {
     position: absolute;
     top: 0;
     left: 0;
@@ -62,7 +62,7 @@ body {
     object-fit: cover;
 }
 
-.isotope__overlay {
+.isotope-page__content {
     position: relative;
     z-index: 10;
     display: flex;
@@ -72,13 +72,13 @@ body {
     justify-content: end;
 }
 
-.isotope__info {
+.isotope-page__info {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.isotope__name {
+.isotope-page__name {
     letter-spacing: -2%;
 }
 
@@ -86,7 +86,7 @@ body {
     content: "";
 }
 
-.isotope__meta {
+.isotope-page__meta {
     display: flex;
     margin-left: auto;
     flex-direction: column;
@@ -165,7 +165,8 @@ body {
     mask-size: contain;
 }
 
-.isotope__navigation {
+.page--feed .navigation {
+    z-index: 20;
     margin-top: 24px;
 }
 
@@ -174,8 +175,8 @@ body {
     flex-direction: column;
 }
 
-.add__navigation,
-.catalog__navigation {
+.page--add .navigation,
+.page--catalog .navigation {
     margin-top: auto;
 }
 
@@ -359,9 +360,10 @@ body {
     box-shadow: var(--box-shadow-main);
 }
 
-.isotope__overlay {
-    margin: -16px -20px;
-    padding: 16px 20px;
+.isotope-page__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
 
     background: linear-gradient(180deg,
             rgba(6 18 32 / .75) 10%,
@@ -413,11 +415,11 @@ input[type="file"]:hover::file-selector-button {
     border-radius: 8px;
 }
 
-.isotope__half-life {
+.isotope-page__half-life {
     width: 42px;
 }
 
-.isotope__half-life .property-display__value {
+.isotope-page__half-life .property-display__value {
     padding: 2px;
     color: var(--text-main);
     font-size: 11px;
@@ -426,7 +428,7 @@ input[type="file"]:hover::file-selector-button {
     border-radius: 4px;
 }
 
-.isotope__radiation-type .property-display__value {
+.isotope-page__radiation-type .property-display__value {
     padding: 2px;
     color: var(--status-danger);
     background-color: var(--surface-danger);
@@ -434,7 +436,7 @@ input[type="file"]:hover::file-selector-button {
     border-radius: 4px;
 }
 
-.isotope__radiation-type--alpha .property-display__value {
+.isotope-page__radiation-type--alpha .property-display__value {
     color: var(--status-success);
     background-color: var(--surface-success);
     border: 1px solid var(--border-success);
@@ -505,9 +507,9 @@ input[type="file"]:hover::file-selector-button {
     object-fit: contain;
 }
 
-.isotope__name,
+.isotope-page__name,
 .property-display__label,
-.isotope__description {
+.isotope-page__description {
     text-shadow: 0 1px 2px rgb(0 0 0 / .25);
 }
 

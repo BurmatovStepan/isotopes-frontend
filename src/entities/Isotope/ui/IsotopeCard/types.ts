@@ -1,9 +1,12 @@
-export type IsotopeCardProps = {
-    id: number;
-    name: string;
-    halfLifeFormatted: string;
-    imageUrl: string | null;
-    likeCount: number;
-    isLiked: boolean;
-    isAuthor: boolean;
-}
+import type { IsotopeView } from "../../types";
+
+export type IsotopeCardProps = Pick<
+    IsotopeView,
+    "id" |
+    "name" |
+    "halfLifeFormatted" |
+    "imageUrl" |
+    "likeCount" |
+    "isLiked" |
+    "isAuthor"
+>;

@@ -1,6 +1,8 @@
 import type { IsotopeDTO } from '@/entities/Isotope/api/types';
 import { IsotopeStatus } from '@/entities/Isotope/types';
 
+export type MockIsotopeDTO = IsotopeDTO & { status: IsotopeStatus };
+
 export const USER = [
     { id: 1 },
     { id: 2 }
@@ -93,47 +95,6 @@ export const LIKE = [
     { id: 4, userId: 2, isotopeId: 4 }
 ];
 
-export type MockIsotopeDTO = IsotopeDTO & { status: IsotopeStatus };
-
-const NANOSECONDS_PER_SECOND = 1_000_000_000n;
-const SECONDS_PER_YEAR = 31_556_952n;
-
-const TIME_UNITS = [
-    { label: 'млрд. л.', nanoseconds: SECONDS_PER_YEAR * 1_000_000_000n * NANOSECONDS_PER_SECOND },
-    { label: 'млн. л.', nanoseconds: SECONDS_PER_YEAR * 1_000_000n * NANOSECONDS_PER_SECOND },
-    { label: 'тыс. л.', nanoseconds: SECONDS_PER_YEAR * 1_000n * NANOSECONDS_PER_SECOND },
-    { label: 'л.', nanoseconds: SECONDS_PER_YEAR * NANOSECONDS_PER_SECOND },
-    { label: 'д.', nanoseconds: 86_400n * NANOSECONDS_PER_SECOND },
-    { label: 'ч.', nanoseconds: 3_600n * NANOSECONDS_PER_SECOND },
-    { label: 'мин.', nanoseconds: 60n * NANOSECONDS_PER_SECOND },
-    { label: 'сек.', nanoseconds: NANOSECONDS_PER_SECOND },
-    { label: 'мс.', nanoseconds: 1_000_000n },
-    { label: 'мкс.', nanoseconds: 1_000n },
-    { label: 'нс.', nanoseconds: 1n },
-];
-
-function formatHalfLife(value: string | null): string {
-    if (value === null) return 'неизвестно';
-
-    const nanoseconds = BigInt(value);
-    const unit = TIME_UNITS.find(({ nanoseconds: unitSize }) => nanoseconds >= unitSize);
-
-    if (!unit) return `${value} нс.`;
-
-    const integerPart = nanoseconds / unit.nanoseconds;
-    const remainder = nanoseconds % unit.nanoseconds;
-    const fractionalPart = (remainder * 100n) / unit.nanoseconds;
-
-    if (fractionalPart === 0n) return `${integerPart} ${unit.label}`;
-
-    const fraction = fractionalPart
-        .toString()
-        .padStart(2, '0')
-        .replace(/0+$/, '');
-
-    return `${integerPart}.${fraction} ${unit.label}`;
-}
-
 export function createIsotopeDTOs(): Record<number, MockIsotopeDTO> {
     const result: Record<number, MockIsotopeDTO> = {};
 
@@ -147,7 +108,6 @@ export function createIsotopeDTOs(): Record<number, MockIsotopeDTO> {
             imageUrl: isotope.imageUrl ?? null,
             videoUrl: isotope.videoUrl ?? null,
             halfLife,
-            halfLifeFormatted: formatHalfLife(halfLife),
             isAlpha: isotope.isAlpha ?? null,
             likeCount: LIKE.filter(like => like.isotopeId === isotope.id).length,
             isLiked: false,
