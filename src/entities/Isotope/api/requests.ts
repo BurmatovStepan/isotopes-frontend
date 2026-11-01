@@ -5,7 +5,7 @@ import { mapIsotopeDTO } from './mappers';
 
 import type { IsotopeView } from '../types';
 
-export async function fetchPublished(
+export async function fetchAllPublished(
     maxHalfLife?: bigint,
 ): Promise<IsotopeView[]> {
     return Object.values(ISOTOPE_DTOS)

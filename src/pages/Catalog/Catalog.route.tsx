@@ -1,4 +1,4 @@
-import { fetchPublished } from '@/entities/Isotope/api/requests';
+import { fetchAllPublished } from '@/entities/Isotope/api/requests';
 
 import CatalogPage from './Catalog';
 
@@ -31,7 +31,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     }
 
     return {
-        isotopes: await fetchPublished(limit),
+        isotopes: await fetchAllPublished(limit),
         maxHalfLifeExponent,
     };
 }

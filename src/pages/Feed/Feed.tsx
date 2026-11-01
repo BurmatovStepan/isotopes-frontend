@@ -59,7 +59,7 @@ export default function FeedPage({
                     <div className="property-display__value">{isotope.halfLifeFormatted.compact}</div>
                 </div>
 
-                <Link to={`/isotopes/home/${isotope.id}?next=true`} className="meta__next next-button">
+                <Link to={`/isotopes/feed/${isotope.id}?next=true`} className="meta__next next-button">
                     <img src="/icons/chevrons-right.svg" className="next-button__icon" />
                 </Link>
             </div>
