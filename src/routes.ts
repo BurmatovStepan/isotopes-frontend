@@ -9,5 +9,6 @@ export default [
             route(":isotopeId", "./pages/Feed/FeedById.route.tsx"),
         ]),
         route("catalog", "./pages/Catalog/Catalog.route.tsx"),
+        route('add', './pages/Add/Add.route.tsx'),
     ])
 ] satisfies RouteConfig;

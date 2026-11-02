@@ -1,0 +1,10 @@
+@use "@/shared/scss/mixins" as *;
+
+.textarea {
+    @include form-field;
+
+    &__input {
+        field-sizing: content;
+        resize: vertical;
+    }
+}

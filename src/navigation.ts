@@ -26,16 +26,16 @@ const NAV_ITEMS: NavItem[] = [
         access: Access.Everyone,
         iconUrl: '/icons/grid.svg',
     },
-    {
-        to: 'add',
-        access: Access.Auth,
-        iconUrl: '/icons/circle-plus.svg',
-    },
-    {
-        to: 'auth',
-        access: Access.Guest,
-        iconUrl: '/icons/bin.svg',
-    },
+    // {
+    //     to: 'add',
+    //     access: Access.Auth,
+    //     iconUrl: '/icons/circle-plus.svg',
+    // },
+    // {
+    //     to: 'auth',
+    //     access: Access.Guest,
+    //     iconUrl: '/icons/bin.svg',
+    // },
 ]
 
 export function getVisibleNavItems(isGuest: boolean) {

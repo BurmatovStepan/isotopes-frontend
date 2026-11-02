@@ -16,7 +16,7 @@ export default function Search({
 
     return (
         <form method="get" className={`search ${className}`}>
-            <div className="search__value-display" data-search-value>
+            <div className="search__value-display">
                 {hasValue ?  `${BASE ** BigInt(exponent)} нс.` : EMPTY_STATE_MESSAGE}
             </div>
             <button className="search__find" type="submit">Найти</button>
@@ -32,7 +32,6 @@ export default function Search({
                     step="1"
                     value={exponent}
                     onChange={event => setExponent(Number(event.currentTarget.value))}
-                    data-search-slider
                 />
             </div>
         </form>

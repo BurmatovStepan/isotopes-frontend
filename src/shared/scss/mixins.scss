@@ -1,0 +1,26 @@
+@mixin form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &__label {
+        width: max-content;
+        font-weight: 600;
+    }
+
+    &__input {
+        padding-left: 8px;
+        color: var(--text-main);
+        background-color: var(--surface-field);
+        border: 1px solid var(--border-main);
+        border-radius: 8px;
+
+        box-shadow: var(--box-shadow-small);
+        transition: box-shadow var(--transition-short) var(--transition-timing-function);
+
+        &:focus {
+            outline: 1px solid var(--primary);
+            box-shadow: var(--box-shadow-main);
+        }
+    }
+}

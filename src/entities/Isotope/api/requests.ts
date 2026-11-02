@@ -56,3 +56,12 @@ export async function fetchNextPublished(
 
     return mapIsotopeDTO(dto);
 }
+
+export async function fetchDraft() {
+    const dto = Object.values(ISOTOPE_DTOS)
+        .find(dto => dto.status === IsotopeStatus.Draft);
+
+    if (!dto) return null;
+
+    return mapIsotopeDTO(dto);
+}

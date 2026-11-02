@@ -1,0 +1,104 @@
+.add {
+    display: flex;
+    flex-direction: column;
+}
+
+.page--add .navigation {
+    margin-top: auto;
+}
+
+.form {
+    display: flex;
+    padding: 0 2px 20px;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+
+    &__media-wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+
+        box-shadow: var(--box-shadow-small);
+        transition: box-shadow var(--transition-short) var(--transition-timing-function);
+
+        &:hover {
+            box-shadow: var(--box-shadow-main);
+        }
+    }
+
+    &__media-preview {
+        height: 200px;
+        background-color: var(--surface-field);
+        border: 1px solid var(--border-main);
+        border-radius: 8px;
+        object-fit: contain;
+    }
+
+    &__media-field {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 8px;
+    }
+
+    &__submit {
+        padding: 4px 8px;
+        align-self: end;
+        color: var(--primary);
+        background-color: var(--surface-primary);
+        border: 1px solid var(--border-primary);
+        border-radius: 8px;
+
+        box-shadow: var(--box-shadow-small);
+        transition:
+            box-shadow var(--transition-short) var(--transition-timing-function),
+            filter var(--transition-short) var(--transition-timing-function),
+            transform var(--transition-short) var(--transition-timing-function);
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+
+        &:active {
+            box-shadow: var(--box-shadow-main);
+            transform: translateY(1px);
+        }
+    }
+}
+
+.radiation-type {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &__label {
+        font-weight: 600;
+    }
+
+    &__input {
+        aspect-ratio: 1 / 1;
+        width: 20px;
+        accent-color: var(--primary);
+    }
+
+    &__control {
+        display: flex;
+        width: max-content;
+        height: 32px;
+        padding-inline: 8px;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 8px;
+        background-color: var(--surface-field);
+        border: 1px solid var(--border-main);
+        border-radius: 8px;
+        box-shadow: var(--box-shadow-small);
+    }
+
+    &__divider {
+        width: 1px;
+        height: 100%;
+        background-color: var(--border-main);
+    }
+}
